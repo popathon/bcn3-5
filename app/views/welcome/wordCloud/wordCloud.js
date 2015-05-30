@@ -13,9 +13,8 @@ require('./wordCloud.less');
 
 let wordCloud = React.createClass({
 
-    onTagSelected: function () {
-        console.log('::onTagSelected()');
-        this.onWordSelected();
+    onTagSelected: function (e) {
+        this.props.onWordSelected(e);
     }
 
     // The object returned by this method sets the initial value of this.state
@@ -36,7 +35,7 @@ let wordCloud = React.createClass({
     render: function () {
         let tags = _.map(this.props.model.posibleTags, function (ts) {
             return (<li>
-                <button onClick={this.onTagSelected}>{ts}</button>
+                <button onClick={this.onTagSelected.bind(this, ts)}>{ts}</button>
             </li>);
         }, this);
         return (

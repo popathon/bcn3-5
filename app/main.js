@@ -25,7 +25,11 @@ let NotFound = require('./views/notFound');
 
 
 let App = React.createClass({
-    getInitialState: function () {
+    onWordSelected: function (word) {
+        this.setState({tag: word});
+    }
+
+    , getInitialState: function () {
         return {
             state: '' //['welcome', 'tweet', 'stadium']
             , tag: ''
@@ -34,7 +38,7 @@ let App = React.createClass({
     , render: function () {
         return ( <div className='Main'>
             <MainMenu/>
-            <RouteHandler model={model}/>
+            <RouteHandler model={model} state={this.state} onWordSelected={this.onWordSelected}/>
         </div> );
     }
 });

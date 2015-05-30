@@ -34,7 +34,7 @@ let tweetView = React.createClass({
     render: function () {
         return (
             < div className = 'TweetView' >
-                tweetView
+                Tou are tweeting {this.props.state.tag}
                 < GetMicrophone/>
                 < Gauge/>
                 < DoTweet/>

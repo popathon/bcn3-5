@@ -21,12 +21,9 @@ let WordCLoud = require('./wordCloud/wordCloud');
 
 let welcomeComponent = React.createClass({
 
-    onWordSelected: function (e) {
-        console.log('::onWordSelected()', e);
-    }
 
     // The object returned by this method sets the initial value of this.state
-    , getInitialState: function () {
+      getInitialState: function () {
         return {};
     },
 
@@ -44,7 +41,7 @@ let welcomeComponent = React.createClass({
         return (
             <div className='WelcomeComponent'>
                 welcomeComponent  asdas
-                <WordCLoud {...this.props} onWordSelected={this.onWordSelected}/>
+                <WordCLoud {...this.props}/>
             </div>
         );
     },
