@@ -1,46 +1,46 @@
 'use strict';
 
-let React = require('react');
+let React = require('react')
+    , Hark = require('hark');
+
 
 /*
-*
-* */
+ *
+ * */
 require('./getMicrophone.less');
 /*
-*
-* */
-
+ *
+ * */
 
 
 let getMicrophone = React.createClass({
 
-    onGetMicrophone: function(){
-        console.log( '::onDoTweet()' );
+    onGetMicrophone: function () {
+
+        //getUserMedia({audio: true}, successCallback, errorCallback);
     }
     // The object returned by this method sets the initial value of this.state
-    , getInitialState: function(){
+    , getInitialState: function () {
         return {};
     },
 
     // The object returned by this method sets the initial value of this.props
     // If a complex object is returned, it is shared among all component instances
-     propTypes: {
-
-    }
-    , getDefaultProps: function(){
+    propTypes: {}
+    , getDefaultProps: function () {
         return {};
     },
 
     // Returns the jsx markup for a component
     // Inspects this.state and this.props create the markup
     // Should never update this.state or this.props
-    render: function(){
+    render: function () {
         return (
             <div className='GetMicrophone'>
                 getMicrophone
                 <button onClick={this.onGetMicrophone}>get microphone</button>
             </div>
-            );
+        );
     },
 
     // An array of objects each of which can augment the lifecycle methods
@@ -48,24 +48,25 @@ let getMicrophone = React.createClass({
 
     // Functions that can be invoked on the component without creating instances
     statics: {
-        aStaticFunction: function(){}
+        aStaticFunction: function () {
+        }
     },
 
     // -- Lifecycle Methods --
 
     // Invoked once before first render
-    componentWillMount: function(){
+    componentWillMount: function () {
         // Calling setState here does not cause a re-render
     },
 
     // Invoked once after the first render
-    componentDidMount: function(){
+    componentDidMount: function () {
         // You now have access to this.getDOMNode()
     },
 
     // Invoked whenever there is a prop change
     // Called BEFORE render
-    componentWillReceiveProps: function(nextProps){
+    componentWillReceiveProps: function (nextProps) {
         // Not called for the initial render
         // Previous props can be accessed by this.props
         // Calling setState here does not trigger an an additional re-render
@@ -74,23 +75,23 @@ let getMicrophone = React.createClass({
     // Determines if the render method should run in the subsequent step
     // Called BEFORE a render
     // Not called for the initial render
-    shouldComponentUpdate: function(nextProps, nextState){
+    shouldComponentUpdate: function (nextProps, nextState) {
         // If you want the render method to execute in the next step
         // return true, else return false
         return true;
     },
 
     // Called IMMEDIATELY BEFORE a render
-    componentWillUpdate: function(nextProps, nextState){
+    componentWillUpdate: function (nextProps, nextState) {
         // You cannot use this.setState() in this method
     },
 
     // Called IMMEDIATELY AFTER a render
-    componentDidUpdate: function(prevProps, prevState){
+    componentDidUpdate: function (prevProps, prevState) {
     },
 
     // Called IMMEDIATELY before a component is unmounted
-    componentWillUnmount: function(){
+    componentWillUnmount: function () {
     }
 
 });

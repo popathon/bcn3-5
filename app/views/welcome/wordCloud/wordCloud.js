@@ -34,7 +34,7 @@ let wordCloud = React.createClass({
     // Should never update this.state or this.props
     render: function () {
         let tags = _.map(this.props.model.posibleTags, function (ts) {
-            return (<li>
+            return (<li key={Math.random() * 10000000 >> 0}>
                 <button onClick={this.onTagSelected.bind(this, ts)}>{ts}</button>
             </li>);
         }, this);

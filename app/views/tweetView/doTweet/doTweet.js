@@ -16,6 +16,9 @@ let doTweet = React.createClass({
 
     onDoTweet: function(){
         console.log( '::onDoTweet()' );
+
+
+        this.props.onTweetDone();
     }
     // The object returned by this method sets the initial value of this.state
     , getInitialState: function(){

@@ -37,7 +37,7 @@ let tweetView = React.createClass({
                 Tou are tweeting {this.props.state.tag}
                 < GetMicrophone/>
                 < Gauge/>
-                < DoTweet/>
+                < DoTweet onTweetDone={this.props.onTweetDone}/>
             </div>
         )
             ;

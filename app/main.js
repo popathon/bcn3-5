@@ -26,19 +26,43 @@ let NotFound = require('./views/notFound');
 
 let App = React.createClass({
     onWordSelected: function (word) {
-        this.setState({tag: word});
+
+        this.setState({tag: word, state: 'tweet'});
+    }
+    , onTweetDone: function () {
+
+        this.setState({state: 'stadium'});
+    },
+    onStartAgain: function () {
+
+        this.setState({state: 'welcome'});
     }
 
     , getInitialState: function () {
         return {
-            state: '' //['welcome', 'tweet', 'stadium']
+            state: 'welcome' //['welcome', 'tweet', 'stadium']
             , tag: ''
         };
     }
     , render: function () {
+        let Tag;
+        switch (this.state.state) {
+            case 'welcome':
+                Tag = WelcomeComponent;
+                break;
+            case 'tweet':
+                Tag = TweetView;
+                break;
+            case 'stadium':
+                Tag = StadiumComponent;
+                break;
+        }
+
+
         return ( <div className='Main'>
-            <MainMenu/>
-            <RouteHandler model={model} state={this.state} onWordSelected={this.onWordSelected}/>
+        {/* <MainMenu/>*/}
+            <Tag model={model} state={this.state} onWordSelected={this.onWordSelected} onTweetDone={this.onTweetDone} onStartAgain={this.onStartAgain}/>
+        {/*<RouteHandler model={model} state={this.state} onWordSelected={this.onWordSelected}/>*/}
         </div> );
     }
 });
@@ -87,19 +111,21 @@ let model = {
     posibleTags: tags
 };
 
-var routes = (
-    <Route handler={App} path="/">
-        <DefaultRoute handler={WelcomeComponent} />
-        <Route name="welcome" handler={WelcomeComponent} />
-        <Route name="tweet" handler={TweetView}/>
-        <Route name="stadium" handler={StadiumComponent}/>
-        <NotFoundRoute handler={NotFound}/>
-    </Route>
-);
+//var routes = (
+//    <Route handler={App} path="/">
+//        <DefaultRoute handler={WelcomeComponent} />
+//        <Route name="welcome" handler={WelcomeComponent} />
+//        <Route name="tweet" handler={TweetView}/>
+//        <Route name="stadium" handler={StadiumComponent}/>
+//        <NotFoundRoute handler={NotFound}/>
+//    </Route>
+//);
 
-Router.run(routes, function (Handler) {
-    React.render(<Handler/>, document.body);
-});
+//Router.run(routes, function (Handler) {
+//    React.render(<Handler/>, document.body);
+//});
+
+React.render(<App/>, document.body);
 
 
 
