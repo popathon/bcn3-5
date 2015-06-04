@@ -18,7 +18,7 @@ target/
 #npm grunt bower yeoman
 bower_components/
 node_modules/
-dist/
+#dist/
 
 #ship s3 credentials
 ship.conf
