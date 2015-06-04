@@ -15,8 +15,6 @@ require('./doTweet.less');
 let doTweet = React.createClass({
 
     onDoTweet: function(){
-        console.log( '::onDoTweet()' );
-
 
         this.props.onTweetDone();
     }

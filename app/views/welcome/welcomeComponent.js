@@ -40,6 +40,7 @@ let welcomeComponent = React.createClass({
     render: function () {
         return (
             <div className='WelcomeComponent'>
+                <img src='./images/welcome.jpg'/>
                 welcomeComponent  asdas
                 <WordCLoud {...this.props}/>
             </div>

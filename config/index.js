@@ -46,6 +46,8 @@ exports.build = mergeConfig({
             compress: {
                 warnings: true
             },
+            sourceMap:false
+            ,mangle:false
         })
     ],
 });

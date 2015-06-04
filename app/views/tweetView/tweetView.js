@@ -32,15 +32,19 @@ let tweetView = React.createClass({
     // Inspects this.state and this.props create the markup
     // Should never update this.state or this.props
     render: function () {
+
+        //< GetMicrophone/>
         return (
             < div className = 'TweetView' >
+                <img src='./images/tweet.jpg'/>
                 Tou are tweeting {this.props.state.tag}
-                < GetMicrophone/>
+
+
+
                 < Gauge/>
-                < DoTweet onTweetDone={this.props.onTweetDone}/>
+                < DoTweet onTweetDone={this.props.onTweetDone} {...this.props}/>
             </div>
-        )
-            ;
+        );
     },
 
     // An array of objects each of which can augment the lifecycle methods
@@ -97,3 +101,38 @@ let tweetView = React.createClass({
 });
 
 module.exports = tweetView;
+
+/* eslint-disable */
+let data = {
+    'name': 'flare',
+    'children': [
+        {
+            'name': 'analytics',
+            'children': [
+                {
+                    'name': 'cluster',
+                    'children': [
+                        {'name': '#democracia', 'size': 528 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#independencia', 'size': 200 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#justiciasocial', 'size': 745 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#república', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#deshaucios', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#pobreza', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#sanidadpública', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#educaciónpública', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#culturalibre', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#desigualdadesdegénero', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#libreexpresión', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#jugarlimpio', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#naciólliure', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#sociedadjusta', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#independentzia', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'}
+
+                    ]
+                }
+            ]
+        }
+
+    ]
+};
+/* eslint-enable */

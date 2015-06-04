@@ -2,6 +2,7 @@
 
 let React = require('react')
     , _ = require('lodash');
+let Howl = require('howler').Howl;
 
 /*
  *
@@ -11,10 +12,21 @@ require('./wordCloud.less');
  *
  * */
 
+let sound = new Howl({
+    urls: ['./sound/Silbido_01.mp3']
+}).play();
+
 let wordCloud = React.createClass({
 
     onTagSelected: function (e) {
         this.props.onWordSelected(e);
+    }
+
+    , mouseEnter: function () {
+        sound.play();
+    }
+    , mouseLeave: function () {
+        sound.stop();
     }
 
     // The object returned by this method sets the initial value of this.state
@@ -34,8 +46,8 @@ let wordCloud = React.createClass({
     // Should never update this.state or this.props
     render: function () {
         let tags = _.map(this.props.model.posibleTags, function (ts) {
-            return (<li key={Math.random() * 10000000 >> 0}>
-                <button onClick={this.onTagSelected.bind(this, ts)}>{ts}</button>
+            return (<li key={Math.random() * 10000000 >> 0} onClick={this.onTagSelected.bind(this, ts)}>
+                <span onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>{ts}</span>
             </li>);
         }, this);
         return (

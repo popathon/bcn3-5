@@ -1,15 +1,65 @@
+
+body{
+  font-family: "Helvetic Neue", Helvetica, Arial;
+}
+
+button{
+  cursor: pointer;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
 .Main {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 0, 0, .2);
+  //  background-color: rgba(255, 0, 0, .2);
+
+  img {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
   .view {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: orange;
+    //    background-color: orange;
 
+  }
+  .PageShare {
+    .view;
+
+    button {
+      position: absolute;
+      left: 487px;
+      top: 888px;
+
+      width: 318px;
+      height: 100px;
+
+      opacity: 0;
+    }
+
+    .message{
+      width: 1000px;
+      color: white;
+      font-size: 48px;
+
+      margin-top: 20%;
+      text-align: center;
+//       .innerMessage{
+//         width: 80%;
+//       }
+
+      padding-left: 120px;
+//      right: 100px;
+    }
   }
 
   /*
@@ -17,8 +67,34 @@
   */
   .WelcomeComponent {
     .view;
-    background-color: orange;
 
+    ul {
+      padding-top: 10px;
+      max-width: 1000px;
+
+      position: relative;
+      left: 170px;
+      top: 442px;
+
+      list-style: none;
+      color: white;
+
+      li {
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+        float: left;
+
+        span {
+          &:hover {
+            color: #0000f6;
+          }
+        }
+      }
+
+    }
+
+    //    background-color: orange;
   }
 
   /*
@@ -26,24 +102,62 @@
   */
   .TweetView {
     .view;
-    background-color: greenyellow;
+    //    background-color: greenyellow;
 
     .GetMicrophone {
-       width: 40%;
+      width: 40%;
       height: 300px;
-      background-color: rgba(255,0,0,.2);
+      //      background-color: rgba(255, 0, 0, .2);
     }
 
     .DoTweet {
-       width: 40%;
+      width: 40%;
       height: 300px;
-      background-color: rgba(255,0,0,.2);
+
+      position: absolute;
+      left: 186px;
+       top: 692px;
+
+      button{
+        width: 900px;
+        height: 200px;
+        opacity: 0;
+      }
+      //      background-color: rgba(255, 0, 0, .2);
     }
 
     .Gauge {
       width: 40%;
       height: 300px;
-     background-color: rgba(255,0,0,.2);
+      //      background-color: rgba(255, 0, 0, .2);
+
+      position: absolute;
+      left: 300px;
+      top: 300px;
+
+      .gauge {
+        width: 400px;
+        margin: 100px auto;
+
+      }
+
+      .chart-color1 {
+        fill: #DEA82C
+      }
+
+      .chart-color2 {
+        fill: #E9621A
+      }
+
+      .chart-color3 {
+        fill: #e92213
+      }
+
+      .needle,
+      .needle-center {
+        fill: #464A4F
+      }
+
     }
 
   }
@@ -53,8 +167,23 @@
   */
   .StadiumView {
     .view;
-    background-color: lightblue;
 
+    .paper {
+      margin-left: 240px;
+      margin-top: 240px;
+
+    }
+
+    button {
+      position: absolute;
+      left: 487px;
+      top: 888px;
+
+      width: 318px;
+      height: 100px;
+
+      opacity: 0;
+    }
   }
 
 }

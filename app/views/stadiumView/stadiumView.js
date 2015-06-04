@@ -10,6 +10,8 @@
 let React = require('react')
     , d3 = require('d3');
 
+let Howl = require('howler').Howl;
+
 /*
  *
  * */
@@ -38,8 +40,11 @@ let stadiumView = React.createClass({
     render: function () {
         return (
             <div className='StadiumView'>
-                <div><button onClick={this.props.onStartAgain}>otra vez</button></div>
-                <div ref='paper'>
+                <img src='./images/stadium.jpg'/>
+                <div>
+                    <button onClick={this.props.onStartAgain}>otra vez</button>
+                </div>
+                <div ref='paper' className='paper'>
                     Gauge data
                 </div>
             </div>
@@ -64,9 +69,10 @@ let stadiumView = React.createClass({
 
     // Invoked once after the first render
     componentDidMount: function () {
+
         // You now have access to this.getDOMNode()
         // You now have access to this.getDOMNode()
-        var diameter = 960,
+        var diameter = 640,
             format = d3.format(',d'),
             color = d3.scale.category20c();
 
@@ -105,8 +111,10 @@ let stadiumView = React.createClass({
             });
 
         node.append('text')
-            .attr('dy', '.3em')
+            .attr('dy', '.27em')
             .style('text-anchor', 'middle')
+            .style('font-size', '12px')
+            .attr('color', 'white')
             .text(function (d) {
                 return d.className.substring(0, d.r / 3);
             });
@@ -179,10 +187,21 @@ let data = {
                 {
                     'name': 'cluster',
                     'children': [
-                        {'name': 'AgglomerativeCluster', 'size': 3938},
-                        {'name': 'CommunityStructure', 'size': 3812},
-                        {'name': 'HierarchicalCluster', 'size': 6714},
-                        {'name': 'MergeEdge', 'size': 743}
+                        {'name': '#democracia', 'size': 528 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#independencia', 'size': 200 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#justiciasocial', 'size': 745 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#república', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#deshaucios', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#pobreza', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#sanidadpública', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#educaciónpública', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#culturalibre', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#desigualdadesdegénero', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#libreexpresión', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#jugarlimpio', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#naciólliure', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#sociedadjusta', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'},
+                        {'name': '#independentzia', 'size': 380 , mensajepre:'#YoPitoPor', mensajepost:'Y tú, ¿por qué pitas? Participa aquí: http://media-attack.tv/yopitopor/pitada.html'}
 
                     ]
                 }
@@ -191,4 +210,5 @@ let data = {
 
     ]
 };
+
 /* eslint-enable */
